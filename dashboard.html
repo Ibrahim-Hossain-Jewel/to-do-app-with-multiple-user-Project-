@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jewel.css">
+    <title>dashboard is opened </title>
+</head>
+<body>
+    <a href="index.html"><button>Logout</button></a>
+    <a href="accountsetting.html"><button>accountsetting</button></a> 
+    <div class="todolist">
+        <ul id="tododatalist">
+            <li>To do list data one</li>
+            
+        </ul>
+    </div>
+    <!---<button type="button"><a href="listData.html">Add new to do</a></button>-->
+    <form name="form_for_to_do_list">
+        <input type="text" name="listdata" id="list" value="" placeholder="Enter your to do list value">
+        <button type="button" onclick="todoList(this.form);">Create to do list</button>
+    </form>
+    
+    <script src="main.js"></script>
+</body>
+</html>

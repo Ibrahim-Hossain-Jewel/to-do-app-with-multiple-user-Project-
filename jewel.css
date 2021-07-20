@@ -1,0 +1,11 @@
+button a{
+    text-decoration: none;
+    font-size: large;
+    padding: 20px;
+}
+button{
+    outline: none;
+    background-color: aqua;
+    border: none;
+    padding: 20px;
+}

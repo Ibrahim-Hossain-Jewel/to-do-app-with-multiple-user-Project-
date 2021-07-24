@@ -32,21 +32,14 @@ function userlogin(form) {
 //end the login system code.
 //starting the to do list form code below.
 //const list = document.getElementById("list");
-const tododatalist = document.getElementById("tododatalist");
-var ourlist = [];
+
 var counter = 0;
 function todoList(form) {
     counter++;
     let value = 'value'+counter;
     const listValue = form.listdata.value;
     window.localStorage.setItem(value,listValue);
-    const li = document.createElement('li');
-    li.innerText = window.localStorage.getItem(value);
-    tododatalist.appendChild(li);
-    // const li = document.createElement('li');
-    // li.innerText = listValue;
-    // tododatalist.appendChild(li);
-    // let value = 'value'+counter;
-    // window.localStorage.setItem(value,li.innerText);
-    // console.log(window.localStorage.getItem(value));
+    alert('Data sent to your Dashboard');
+    form.reset();
+
 }

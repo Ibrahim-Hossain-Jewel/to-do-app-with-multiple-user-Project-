@@ -8,20 +8,28 @@
     <title>dashboard is opened </title>
 </head>
 <body>
-    <a href="index.html"><button>Logout</button></a>
-    <a href="accountsetting.html"><button>accountsetting</button></a> 
+    <button><a href="index.html">Logout</a></button>
+    <button><a href="accountsetting.html">Accountsettings</a></button> 
     <div class="todolist">
         <ul id="tododatalist">
             <li>To do list data one</li>
             
         </ul>
     </div>
-    <!---<button type="button"><a href="listData.html">Add new to do</a></button>-->
-    <form name="form_for_to_do_list">
-        <input type="text" name="listdata" id="list" value="" placeholder="Enter your to do list value">
-        <button type="button" onclick="todoList(this.form);">Create to do list</button>
-    </form>
-    
-    <script src="main.js"></script>
+    <button type="button"><a href="update.html" target="_blank">Add new to do</a></button>
+    <script>
+        let length = localStorage.length;
+        const tododatalist = document.getElementById("tododatalist");
+        
+        for (let index = 1; index < length; index++) {
+            const element = window.localStorage.getItem('value'+[index]);
+            const li = document.createElement('li');
+            li.innerText = element;
+            tododatalist.appendChild(li);
+            if(li.innerText=== ''){
+                li.remove();
+            }
+        }
+    </script>
 </body>
 </html>

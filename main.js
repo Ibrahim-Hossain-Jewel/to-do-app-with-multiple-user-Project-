@@ -1,11 +1,18 @@
 const successMessage = document.querySelector(".successMessage");
+var userCounter = 0;
 function registration(jewel){
-    
-    localStorage.setItem('firstname',jewel.firstname.value);
-    localStorage.setItem('lastname',jewel.lastname.value);
-    localStorage.setItem('email',jewel.emailaddress.value);
-    localStorage.setItem('password',jewel.password.value);
-    localStorage.setItem('checkbox',jewel.checkbox.value);
+    userCounter++;
+    let fusername = 'firstname'+userCounter;
+    let flusername = 'lastname'+userCounter;
+    let femail = 'email'+userCounter;
+    let fpassword = 'password'+userCounter;
+    let fcheckbox = 'checkbox'+userCounter;
+
+    localStorage.setItem(fusername,jewel.firstname.value);
+    localStorage.setItem(flusername,jewel.lastname.value);
+    localStorage.setItem(femail,jewel.emailaddress.value);
+    localStorage.setItem(fpassword,jewel.password.value);
+    localStorage.setItem(fcheckbox,jewel.checkbox.value);
     
     successMessage.innerHTML = `<h1>Registration successful <a href = "login.html">Please login</a></h1>`;
     if (localStorage.firstname === "") {
@@ -22,7 +29,7 @@ function registration(jewel){
 }
 //Code for login system in javascript.
 function userlogin(form) {
-    if(form.email.value === localStorage.email && form.password.value === localStorage.password){
+    if(form.email.value === localStorage.email2 && form.password.value === localStorage.password2){
         window.open('dashboard.html');
     }
     else{

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../jewel.css">
+    <title>dashboard is opened </title>
+</head>
+<body>
+    <button><a href="index.html">Logout</a></button>
+    <button><a href="accountsetting.html">Accountsettings</a></button> 
+    <div class="todolist">
+        <ul id="tododatalist">
+            <li>To do list data one</li>
+            
+        </ul>
+    </div>
+    <button type="button"><a href="update.html" target="_blank">Add new to do</a></button>
+    <script>
+        let length = localStorage.length;
+        const tododatalist = document.getElementById("tododatalist");
+        
+        for (let index = 1; index < length; index++) {
+            const element = window.localStorage.getItem('value'+[index]);
+            const li = document.createElement('li');
+            li.innerText = element;
+            tododatalist.appendChild(li);
+            if(li.innerText=== ''){
+                li.remove();
+            }
+        }
+    </script>
+</body>
+</html>
